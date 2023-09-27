@@ -1,0 +1,38 @@
+{% include "header.html"%}
+    <section id="home">
+        <div class="container">
+         
+            <form method = "POST">
+              {% csrf_token %}
+             
+           
+              <div class="row">
+                <div class="col-25">
+                  <label for="Topic">Topic</label>
+                </div>
+                <div class="col-75">
+
+                  <select id="topic_name" name="topic_name">
+                    {% for i in topic_names %}
+                    <option value="{{i.id}}">{{i.topic_name}}</option>                    
+                    {% endfor %}
+                  </select>
+                </div>
+                <input type="submit" value="Submit">
+              </div>
+              
+              
+            </form>
+          </div>
+    </section>
+
+
+   
+
+    {% include "footer.html"%}
+
+
+    
+    
+        
+     

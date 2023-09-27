@@ -1,0 +1,303 @@
+/*-------------Reset-------------*/
+
+button {
+    background: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:focus,
+input:focus {
+    outline: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*-------------Layout-------------*/
+
+body {
+    line-height: 1.5em;
+    padding: 0;
+    margin: 0;
+}
+
+#home {
+    background-color: #ddd;
+}
+
+#about {
+    background-color: #aaa;
+}
+
+#work {
+    background-color: #888;
+}
+
+#contact {
+    background-color: #666;
+}
+
+
+/*-------------Helpers-------------*/
+
+.skew {
+    transform: skew(-20deg);
+}
+
+.un-skew {
+    transform: skew(20deg);
+}
+
+
+/*-------------Nav-------------*/
+
+#nav-wrapper {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+#nav {
+    background-color: #fff;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    font-family: "Saira Semi Condensed", sans-serif;
+    height: 4em;
+    overflow: hidden;
+}
+
+section {
+    height: 100vh;
+    margin-top: 100px;
+}
+
+#nav.nav-visible {
+    height: 100%;
+    overflow: auto;
+}
+
+.nav {
+    display: flex;
+    height: 4em;
+    line-height: 4em;
+    flex-grow: 1;
+}
+
+.nav-link,
+.logo {
+    padding: 0 1em;
+}
+
+span.gradient {
+    background: #f857a8;
+    background: -webkit-linear-gradient(45deg, #f857a8, #ff5858);
+    background: linear-gradient(45deg, #f857a8, #ff5858);
+    padding: 0 1em;
+    position: relative;
+    right: 1em;
+    margin-right: auto;
+}
+
+span.gradient:hover {
+    animation-name: logo-hover;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.17, 0.57, 0.31, 0.85);
+}
+
+h1.logo {
+    font-weight: 300;
+    font-size: 1.75em;
+    line-height: 0.75em;
+    color: #fff;
+}
+
+h1.logo a,
+a:active,
+a:hover,
+a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    text-align: center;
+    border-top: 0.5px solid #ddd;
+}
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: #f857a8;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.btn-nav {
+    color: #f857a8;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+@media (min-width: 800px) {
+    #nav-wrapper {
+        overflow: hidden;
+    }
+    #nav {
+        overflow: hidden;
+        flex-direction: row;
+    }
+    .nav-link {
+        border-top: none;
+    }
+    .right {
+        overflow: hidden;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: relative;
+        left: 1.5em;
+        height: auto;
+    }
+    .btn-nav {
+        display: none;
+    }
+    .nav a:link.active,
+    a:visited.active,
+    a:active.active {
+        background: #f857a8;
+        background: -webkit-linear-gradient(45deg, #f857a8, #ff5858);
+        background: linear-gradient(45deg, #f857a8, #ff5858);
+        color: #fff;
+    }
+    .nav-link-span {
+        transform: skew(20deg);
+        display: inline-block;
+    }
+    .nav-link {
+        transform: skew(-20deg);
+        color: #777;
+        text-decoration: none;
+    }
+    .nav-link:last-child {
+        padding-right: 3em;
+    }
+    a:hover.nav-link:not(.active) {
+        color: #444;
+        background: #ddd;
+        background: linear-gradient(45deg, #fff, #ddd);
+    }
+}
+
+@keyframes logo-hover {
+    20% {
+        padding-right: 0em;
+    }
+    100% {
+        padding-right: 5em;
+    }
+}
+
+
+/* for sidebar */
+
+
+/* Style inputs, select elements and textareas */
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+
+/* Style the label to display next to the inputs */
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+
+/* Style the submit button */
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+
+/* Style the container */
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+/* Floating column for labels: 25% width */
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+
+/* Floating column for inputs: 75% width */
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
+    .col-25,
+    .col-75,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}

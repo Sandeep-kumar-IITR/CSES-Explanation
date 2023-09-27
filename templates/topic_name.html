@@ -1,0 +1,62 @@
+<html>
+    <head>
+        
+        <title>CSES-Explanation</title>
+        <link rel="stylesheet" href="../static/css/style_nav.css">
+        
+    </head>
+<body>
+    <header id="nav-wrapper">
+      <nav id="nav">
+        <div class="nav left">
+          <span class="gradient skew">
+            <h1 class="logo un-skew"><a href="#home">CSES-Explanation</a></h1>
+          </span>
+          <button id="menu" class="btn-nav"><span class="fas fa-bars"></span></button>
+        </div>
+        <div class="nav right">
+          <a href="#home" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
+          <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">About Me</span></span></a>
+          <a href="#contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contact</span></span></a>
+        </div>
+      </nav>
+    </header>
+
+    
+    <section id="home">
+        <div class="container">
+         
+            <form method = "POST">
+              {% csrf_token %}
+             
+           
+              <div class="row">
+                <div class="col-25">
+                  <label for="Question">Question</label>
+                </div>
+                <div class="col-75">
+
+                  <select id="question_name" name="question_name">
+                     {% for i in output %}
+                    <option value="{{i.question_name}}">{{i.question_name}}</option>                    
+                    {% endfor %} 
+                  </select>
+                </div>
+                <input type="submit" value="Submit">
+              </div>
+              
+              
+            </form>
+          </div>
+    </section>
+
+
+
+  </body>
+  </html>
+
+
+    
+    
+        
+     
